@@ -1,0 +1,5 @@
+wheel==0.38.4
+
+# Include normal dependencies from requirements.txt. Makes it possible to use
+# requirements-dev.txt as a single requirement file in PyCharm and other IDEs.
+-r requirements.txt
