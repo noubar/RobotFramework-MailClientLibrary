@@ -18,8 +18,8 @@ Documentation   Test suite for Smtp keywords and Smtp related Setter keywords.
 
 Resource        common.robot
 Suite Setup     Run Keywords
-...             Set All Mail Server Configs
-...  AND        Start Mail Server Docker
+...             Start Mail Server Docker
+...  AND        Set All Mail Server Configs
 Suite Teardown  Stop Mail Server Docker
 
 Test Setup      Run Keywords

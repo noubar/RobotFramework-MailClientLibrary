@@ -4,6 +4,7 @@ Library    OperatingSystem
 Library    Process
 Library    String
 Library    OperatingSystem
+Library    dockerControl.py
 Resource   errors.robot
 Variables  envars.py
 
@@ -51,29 +52,3 @@ Set All Mail Server Configs
     Set Both Imap Ports             ${ENV_IMAP_SSL_PORT}  ${ENV_IMAP_PORT}
     Set Both Pop3 Ports             ${ENV_POP3_SSL_PORT}  ${ENV_POP3_PORT}
     Set Both Smtp Ports             ${ENV_SMTP_SSL_PORT}  ${ENV_SMTP_PORT}
-
-Restart Mail Server Docker
-    ${script}     Convert To String    docker restart container ${DOCKER_CONTAINER_ID}
-    ${out}        Run Process    Powershell  ${script}    shell=True
-    Wait Until Mail Server Docker Container Is Running
-
-Start Mail Server Docker
-    ${script}     Convert To String    docker run --name greenmail --rm -d -e GREENMAIL_OPTS\=\'-Dgreenmail.setup.test.all -Dgreenmail.hostname\=0.0.0.0 -Dgreenmail.users\=user0:password0@mail.com,user1:password1@mail.com,user2:password2@mail.com,user3:password3@mail.com\' -p 3143:3143 -p 3993:3993 -p 3110:3110 -p 3995:3995 -p 3025:3025 -p 3465:3465 -p 8080:8080 greenmail/standalone:2.0.0
-    ${out}        Run Process    Powershell  ${script}    shell=True
-    Should Be Equal      ${out.rc}     ${0}
-    Set Suite Variable   ${DOCKER_CONTAINER_ID}  ${out.stdout}
-    Wait Until Mail Server Docker Container Is Running
-
-Stop Mail Server Docker
-    ${script}     Convert To String    docker stop container ${DOCKER_CONTAINER_ID}
-    ${out}        Run Process   Powershell  ${script}    shell=True
-
-Wait Until Mail Server Docker Container Is Running
-    Sleep  2s
-    Wait Until Keyword Succeeds    10x    2s    Docker Container Should Be Running
-
-Docker Container Should Be Running
-    [Arguments]   ${containerId}=${DOCKER_CONTAINER_ID}
-    ${script}     Convert To String    docker inspect -f "{{.State.Running}}" ${containerId}
-    ${out}        Run Process   Powershell  ${script}    shell=True
-    Should Be Equal As Strings    ${out.stdout}    true

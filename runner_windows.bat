@@ -37,7 +37,6 @@ EXIT /B %ERRORLEVEL%
     mkdir result
     call:test_robot
     if %result%==0 set /A result = %ERRORLEVEL%
-    call rebot --name Atests --outputdir result -x rebot_xunit.xml result/output.xml
     call:cleanup
 EXIT /B %result%
 

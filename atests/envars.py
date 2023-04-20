@@ -1,4 +1,5 @@
 # Variables for Robot
+
 def get_variables():
     variables = {
         "ENV_IMAP_USER":"user1",

@@ -39,7 +39,7 @@ class Imap:
             self.imapobj.login(str(Variables.imap_username), str(Variables.imap_password))
         except:
             MailClientError.raise_mail_client_error(MailClientError.FalseCridentials.format("Imap",Variables.imap_username,Variables.imap_password))
-        print("imap login done")
+        # print("imap login done")
         # select the inbox as default path
         self.imapobj.select('Inbox')
         self.status, self.data = self.imapobj.search(None, "ALL")

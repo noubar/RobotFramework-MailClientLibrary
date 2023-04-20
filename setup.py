@@ -14,10 +14,11 @@ Programming Language :: Python :: 3.7
 Programming Language :: Python :: 3.8
 Programming Language :: Python :: 3.9
 Programming Language :: Python :: 3.10
-Programming Language :: Python :: 3.11
-Programming Language :: Python :: 3 :: Only
+License :: OSI Approved :: MIT License
 Topic :: Software Development :: Testing
-MailClient :: Testing
+Topic :: Communications :: Email :: Email Clients (MUA)
+Topic :: Communications :: Email :: Post-Office :: IMAP
+Topic :: Communications :: Email :: Post-Office :: POP3
 Framework :: Robot Framework
 Framework :: Robot Framework :: Library
 '''.strip().splitlines()
@@ -30,7 +31,7 @@ setup(
     name             = 'robotframework-MailClientLibrary',
     version          = VERSION,
     description      = 'Behavior Tree library for Robot Framework',
-    # long_description = DESCRIPTION,
+    long_description = DESCRIPTION,
     long_description_content_type="text/markdown",
     author           = 'noubar',
     url              = 'https://github.com/noubar/MailClientLibrary',
@@ -38,7 +39,7 @@ setup(
     keywords         = 'robotframework testing testautomation behaviourtree',
     platforms        = 'any',
     classifiers      = CLASSIFIERS,
-    python_requires  = '>=3.6, <4',
+    python_requires  = '>=3.7, <4',
     install_requires = REQUIREMENTS,
     package_dir      = {'MailClientLibrary': 'src/MailClientLibrary'},
     packages         = find_packages('src'),

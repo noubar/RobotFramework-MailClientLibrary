@@ -1,1 +1,6 @@
 ﻿__pycache__
+build
+dist
+robotframework_MailClientLibrary.egg-info
+interactive_console_output.xml
+result
