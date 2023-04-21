@@ -25,17 +25,14 @@ install () {
 test_robot () {
   cd atests || exit
   robot -i unit --outputdir ../result/ .
+  result=$?
   cd ..
 }
 
 test () {
   install
-  result=$?
   mkdir result
   test_robot
-  if [ $result -eq 0 ]; then
-    result=$?
-  fi
   cleanup
   exit $result
 }

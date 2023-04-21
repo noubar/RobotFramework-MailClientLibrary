@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -26,4 +26,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Run Tests
       run: |
-        Powershell runner_windows.bat test
+        bash -x ./runner_linux.sh test
+    - name: Archive robot test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: robot-test-report-python${{ matrix.python-version }}
+        path: result/log.html

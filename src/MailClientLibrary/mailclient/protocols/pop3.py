@@ -41,7 +41,7 @@ class Pop3:
         try:
             self.pop3obj.user(Variables.pop3_username)
             self.pop3obj.pass_(Variables.pop3_password)
-            # print("pop3 login done")
+            print("pop3 login done")
             self.resp, self.mails, self.octets = self.pop3obj.list()
         except:
             MailClientError.raise_mail_client_error(MailClientError.FalseCridentials.format("Pop3",Variables.pop3_username,Variables.pop3_password))

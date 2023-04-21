@@ -4,3 +4,5 @@ dist
 robotframework_MailClientLibrary.egg-info
 interactive_console_output.xml
 result
+keywords
+robotframework_mailclient.egg-info

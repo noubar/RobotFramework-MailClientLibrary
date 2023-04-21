@@ -35,7 +35,7 @@ Suite Teardown  Stop Mail Server Docker
 
 Test Setup      Run Keywords
 ...             Set All Mail Server Configs
-...  AND        Restart Mail Server Docker
+...  AND        Delete Every Pop3 Mail
 
 *** Variables ***
 ${RECEIVERMAIL}  ${ENV_POP3_USER}${DOMAIN}

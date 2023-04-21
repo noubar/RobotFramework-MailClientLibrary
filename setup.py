@@ -28,15 +28,15 @@ with open(join(CURDIR, 'requirements.txt')) as f:
     REQUIREMENTS = f.read().splitlines()
 
 setup(
-    name             = 'robotframework-MailClientLibrary',
+    name             = 'robotframework-mailclient',
     version          = VERSION,
-    description      = 'Behavior Tree library for Robot Framework',
+    description      = 'Mail Client library for Robot Framework',
     long_description = DESCRIPTION,
     long_description_content_type="text/markdown",
     author           = 'noubar',
     url              = 'https://github.com/noubar/MailClientLibrary',
     license          = 'Apache License 2.0',
-    keywords         = 'robotframework testing testautomation behaviourtree',
+    keywords         = 'robotframework testing testautomation mailtesting mailclient mail imap smtp pop3',
     platforms        = 'any',
     classifiers      = CLASSIFIERS,
     python_requires  = '>=3.7, <4',
