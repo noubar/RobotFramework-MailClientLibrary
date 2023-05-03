@@ -43,7 +43,7 @@ The `MailClientLibrary` supports SSL for all protocols and is enabled per defaul
 
 ## Keyword Documentation
 
-[Page](https://noubar.github.io/RobotFramework-MailClientLibrary/)
+The keyword documentation can be found in this [Page](https://noubar.github.io/RobotFramework-MailClientLibrary/).
 
 ## License
 
