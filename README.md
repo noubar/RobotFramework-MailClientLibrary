@@ -41,6 +41,10 @@ The `MailClientLibrary` supports the following protocols:
 
 The `MailClientLibrary` supports SSL for all protocols and is enabled per default. To disable SSL, simply use the `UseSsl=True` argument when using any keyword.
 
+## Keyword Documentation
+
+[Page](https://noubar.github.io/RobotFramework-MailClientLibrary/)
+
 ## License
 
 The `MailClientLibrary` is released under the [MIT License](https://opensource.org/licenses/MIT).
