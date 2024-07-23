@@ -1,7 +1,7 @@
 # MailClientLibrary
 
 The [`MailClientLibrary`](https://github.com/noubar/RobotFramework-MailClientLibrary) is a Python based library for the [Robot Framework](https://robotframework.org/) that provides keywords to interact with mail clients using IMAP, POP3, and SMTP protocols.
-The library officially supports Python >= 3.7 and can be installed using pip.
+The library officially supports Python >= 3.8 and can be installed using pip.
 
 ## Installation
 
