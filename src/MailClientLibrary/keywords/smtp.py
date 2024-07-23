@@ -20,7 +20,7 @@ class SmtpKeywords:
         | text | String | The body Text of the mail to be sent |
         | cc | String | The cc mail address |
         | bcc | String | The bcc mail address |
-        | attachmentFullpath | String | The path of the attachment to be sent within the mail|
+        | attachmentFullpath | String | The path of the attachment to be sent within the mail |
         | useSsl | Boolean | wheather to use ssl or not to connect |
 
         Return:

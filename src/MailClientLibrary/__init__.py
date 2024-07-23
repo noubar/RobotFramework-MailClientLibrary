@@ -47,7 +47,7 @@ class MailClientLibrary(DynamicCore):
     Example:
     | Library | MailClientLibrary | Username=UsernameStr | Password=PasswordStr | MailServerAddress=127.0.0.1 | ImapPort=[993,143] | Pop3Port=[995,110] | SmtpPort=[587,26] |
 
-    == Changing valuse of init variables ==
+    == Changing values of init variables ==
 
     Protocol port numbers are changable during testing through the following provided keywords:
     Example:

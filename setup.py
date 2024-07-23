@@ -20,6 +20,7 @@ Topic :: Software Development :: Testing
 Topic :: Communications :: Email :: Email Clients (MUA)
 Topic :: Communications :: Email :: Post-Office :: IMAP
 Topic :: Communications :: Email :: Post-Office :: POP3
+Topic :: Communications :: Email
 Framework :: Robot Framework
 Framework :: Robot Framework :: Library
 '''.strip().splitlines()
@@ -35,12 +36,12 @@ setup(
     long_description = DESCRIPTION,
     long_description_content_type="text/markdown",
     author           = 'noubar',
-    url              = 'https://github.com/noubar/MailClientLibrary',
+    url              = 'https://github.com/noubar/RobotFramework-MailClientLibrary',
     license          = 'Apache License 2.0',
     keywords         = 'robotframework testing testautomation mailtesting mailclient mail imap smtp pop3',
     platforms        = 'any',
     classifiers      = CLASSIFIERS,
-    python_requires  = '>=3.7, <4',
+    python_requires  = '>=3.8, <4',
     install_requires = REQUIREMENTS,
     package_dir      = {'MailClientLibrary': 'src/MailClientLibrary'},
     packages         = find_packages('src'),
