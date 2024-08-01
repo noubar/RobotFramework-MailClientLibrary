@@ -39,8 +39,7 @@ class MailClientLibrary(DynamicCore):
     All Avialable Args:
       | Username | The user id, which will initially set for all protocols |
       | Password | The user password, which will initially set for all protocols |
-      | MailServerAddress | The newtwork address of the mail server to be connected.
-                            currently supports only one MailServerAddress for all protocols |
+      | MailServerAddress | The newtwork address of the mail server to be connected. currently supports only one MailServerAddress for all protocols |
       | ImapPorts | The imap communication port numbers: [<ssl>,<no ssl>] |
       | Pop3Ports | The pop3 communication port numbers: [<ssl>,<no ssl>] |
       | SmtpPorts | The smtp communication port numbers: [<ssl>,<no ssl>] |
