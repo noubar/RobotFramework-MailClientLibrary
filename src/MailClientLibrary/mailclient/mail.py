@@ -68,9 +68,16 @@ class Mail:
             msg.add_alternative(alternative.body, subtype=alternative.subtype)
         # Set the CC and BCC recipients, if any
         if cc is not None:
-            msg['Cc'] = ', '.join(cc)
+            if isinstance(cc, list):
+                msg['Cc'] = ', '.join(cc)
+            else:
+                msg['Cc'] = cc+','
+            print("cc "+msg['Cc'])
         if bcc is not None:
-            msg['Bcc'] = ', '.join(bcc)
+            if isinstance(bcc, list):
+                msg['Bcc'] = ', '.join(bcc)
+            else:
+                msg['Bcc'] = bcc
         # Add any attachments, if any
         if attachments is not None:
             for attachmentPath in attachments:

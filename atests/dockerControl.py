@@ -14,7 +14,7 @@ class dockerControl:
             prefix = "Powershell "
         else:
             raise(error('The system is neither Linux nor Windows'))
-        self.start_command = prefix + r"docker run --name greenmail --rm -d --platform linux -e GREENMAIL_OPTS='-Dgreenmail.setup.test.all -Dgreenmail.hostname=0.0.0.0 -Dgreenmail.users=user0:password0@mail.com,user1:password1@mail.com,user2:password2@mail.com,user3:password3@mail.com' -p 3143:3143 -p 3993:3993 -p 3110:3110 -p 3995:3995 -p 3025:3025 -p 3465:3465 -p 8080:8080 greenmail/standalone:2.0.0"
+        self.start_command = prefix + r"docker run --name greenmail --rm -d --platform linux -e GREENMAIL_OPTS='-Dgreenmail.setup.test.all -Dgreenmail.hostname=0.0.0.0 -Dgreenmail.users=user0:password0@mail.com,user1:password1@mail.com,user2:password2@mail.com,user3:password3@mail.com' -p 3143:3143 -p 3993:3993 -p 3110:3110 -p 3995:3995 -p 3025:3025 -p 3465:3465 -p 8080:8080 greenmail/standalone:2.1.0-rc-1"
         self.restart_command = prefix + r"docker container restart greenmail"
         self.stop_command = prefix + r"docker container stop greenmail"
         self.running_command = r'docker inspect -f "{{.State.Running}}" greenmail'

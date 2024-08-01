@@ -30,7 +30,7 @@ class Pop3:
                 except(poplib.error_proto):
                     MailClientError.raise_mail_client_error(MailClientError.FalseHostOrPort.format("Pop3", Variables.pop3_mail_server, Variables.pop3_ssl_port))
 
-        else:
+        else: #NoSsl
             try:
                 self.pop3obj = poplib.POP3(Variables.pop3_mail_server, Variables.pop3_port)
             except(TimeoutError):
@@ -48,7 +48,6 @@ class Pop3:
         self.data = []
         for mail in self.mails:
             self.data.append(int(mail[:1].decode()))
-        print("pop3 obj created")
 
     def __del__(self):
         """

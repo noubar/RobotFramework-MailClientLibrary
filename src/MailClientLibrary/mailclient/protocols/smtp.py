@@ -26,7 +26,6 @@ class Smtp:
                 MailClientError.raise_mail_client_error(MailClientError.FalseHost.format("Smtp",Variables.smtp_mail_server))
             try:
                 self.smtpobj.login(str(Variables.smtp_username), str(Variables.smtp_password))
-                print("smtp login done")
             except(smtplib.SMTPAuthenticationError):
                 MailClientError.raise_mail_client_error(MailClientError.FalseCridentials.format("Smtp",Variables.smtp_username, Variables.smtp_password))
         else: # no ssl
@@ -36,6 +35,7 @@ class Smtp:
                 MailClientError.raise_mail_client_error(MailClientError.FalseHost.format("Smtp",Variables.smtp_mail_server))
             except(ConnectionRefusedError):
                 MailClientError.raise_mail_client_error(MailClientError.FalsePort.format("Smtp",Variables.smtp_port))
+        print("smtp login done")
 
     def __del__(self):
         try:
