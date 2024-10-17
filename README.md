@@ -29,6 +29,14 @@ Library  MailClientLibrary  Username=UsernameStr  Password=PasswordStr  MailServ
 If these not provided as arguments it should be set during the test using provided setter keywords look in Keyword Documentation.
 The `MailClientLibrary` provides keywords for interacting with mail clients using IMAP, POP3, and SMTP protocols.
 
+### Contributions
+You can install or test this library locally after editing the code. Ensure that all tests pass. For every added feature, it is expected that you add a corresponding test.
+
+Use one of the following files according to your environment to install or run the tests:
+- [`runner_linux.sh`](https://github.com/noubar/RobotFramework-MailClientLibrary/blob/main/runner_linux.sh) (Linux)
+- [`runner_windows.bat`](https://github.com/noubar/RobotFramework-MailClientLibrary/blob/main/runner_windows.bat) (Windows)
+
+
 ### Supported protocols
 
 The `MailClientLibrary` supports the following protocols:
