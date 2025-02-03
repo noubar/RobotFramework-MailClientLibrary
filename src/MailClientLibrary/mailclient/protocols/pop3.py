@@ -108,6 +108,7 @@ class Pop3:
         """
         if self.is_inbox_empty():
             return False
+        index = int(index)
         if index in self.data:
             byte_lines = self.pop3obj.retr(index)[1]
             messageText = str(message_from_bytes(b'\r\n'.join(byte_lines)))
