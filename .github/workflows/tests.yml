@@ -27,7 +27,7 @@ jobs:
         run: |
           bash -x ./runner_linux.sh test
       - name: Archive robot test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: robot-test-report-python${{ matrix.python-version }}
           path: result/log.html
