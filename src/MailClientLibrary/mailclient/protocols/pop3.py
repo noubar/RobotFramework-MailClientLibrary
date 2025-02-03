@@ -47,7 +47,7 @@ class Pop3:
             MailClientError.raise_mail_client_error(MailClientError.FalseCridentials.format("Pop3",Variables.pop3_username,Variables.pop3_password))
         self.data = []
         for mail in self.mails:
-            self.data.append(int(mail[:1].decode()))
+            self.data.append(int(mail.decode().split()[0]))
 
     def __del__(self):
         """
