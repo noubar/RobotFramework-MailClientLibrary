@@ -25,7 +25,7 @@ class Pop3:
                 MailClientError.raise_mail_client_error(MailClientError.FalseHost.format("Pop3",Variables.pop3_mail_server))
             except:
                 try:
-                    self.pop3obj = poplib.POP3(Variables.imap_mail_server, Variables.imap_ssl_port)
+                    self.pop3obj = poplib.POP3(Variables.pop3_mail_server, Variables.pop3_ssl_port)
                     self.pop3obj.stls()
                 except(poplib.error_proto):
                     MailClientError.raise_mail_client_error(MailClientError.FalseHostOrPort.format("Pop3", Variables.pop3_mail_server, Variables.pop3_ssl_port))
@@ -82,7 +82,7 @@ class Pop3:
 
     def open_mail_by_criteria(self, criteria:str, value:str, firstOnly=True):
         """
-        This function finds the first mail in the initialized imap mailbox with the given subject
+        This function finds the first mail in the initialized pop3 mailbox with the given subject
         Criteria= "From" or "Subject"  (Case Sensitive)
         Returns the entire mail's mime as string. 
         """
@@ -103,7 +103,7 @@ class Pop3:
 
     def open_mail_by_index(self,index:int):
         """
-        This function returns the index-th mail raw context from initialized imap mailbox
+        This function returns the index-th mail raw context from initialized pop3 mailbox
         Returns False if there is no mail with the given index in mailbox
         """
         if self.is_inbox_empty():
@@ -116,7 +116,7 @@ class Pop3:
 
     def delete_every_mail(self):
         """
-        This function deletes every mail in initialized imap mailbox
+        This function deletes every mail in initialized pop3 mailbox
         Returns True if any mail is deleted otherwise False
         """
         if self.is_inbox_empty():
@@ -131,7 +131,7 @@ class Pop3:
 
     def delete_mail_by_criteria(self, criteria, subject, firstOnly=True):
         """
-        This function reads an email inbox using imap protocol and deletes the email with corresponding subject.
+        This function reads an email inbox using pop3 protocol and deletes the email with corresponding subject.
         Returns True if any mail is deleted otherwise False
         """
         deletedAny = False
@@ -145,7 +145,7 @@ class Pop3:
 
     def delete_mail_by_index(self, index:int):
         """
-        This function reads an email inbox using imap protocol and deletes the email with corresponding subject.
+        This function reads an email inbox using pop3 protocol and deletes the email with corresponding subject.
         """
         if self.is_inbox_empty():
             return False
@@ -155,7 +155,7 @@ class Pop3:
         return False
 
     def _get_mail_indexes_by_criteria(self, criteria, value):
-        """ This function iterates only through subjects of the mails in initialized imap mailbox
+        """ This function iterates only through subjects of the mails in initialized pop3 mailbox
         and returns the first index found with the given subject or sender
         Args:
         Creteria = "Subject" or "From"  (CaseSensible)
