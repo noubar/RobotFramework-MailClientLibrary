@@ -39,7 +39,10 @@ class MailClientLibrary(DynamicCore):
     All Avialable Args:
       | Username | The user id, which will initially set for all protocols |
       | Password | The user password, which will initially set for all protocols |
-      | MailServerAddress | The newtwork address of the mail server to be connected. currently supports only one MailServerAddress for all protocols |
+      | MailServerAddress | The newtwork address of the mail server to be connected. |
+      | ImapServerAddress | The newtwork address of the imap server to be connected. This replaces the MailServerAddress if given. |
+      | Pop3ServerAddress | The newtwork address of the pop3 server to be connected. This replaces the MailServerAddress if given. |
+      | SmtpServerAddress | The newtwork address of the smtp server to be connected. This replaces the MailServerAddress if given. |
       | ImapPorts | The imap communication port numbers: [<ssl>,<no ssl>] |
       | Pop3Ports | The pop3 communication port numbers: [<ssl>,<no ssl>] |
       | SmtpPorts | The smtp communication port numbers: [<ssl>,<no ssl>] |
@@ -80,11 +83,13 @@ class MailClientLibrary(DynamicCore):
     ROBOT_LIBRARY_SCOPE = "Global"
     ROBOT_LISTENER_API_VERSION = 2
 
-    def __init__(self, Username="user", Password="pass", MailServerAddress="127.0.0.1", ImapPorts=[993,143], Pop3Ports=[995,110], SmtpPorts=[465,25]):
+    def __init__(self, Username="user", Password="pass", MailServerAddress="127.0.0.1", 
+                 ImapPorts=[993,143], Pop3Ports=[995,110], SmtpPorts=[465,25], 
+                 ImapServerAddress=None, Pop3ServerAddress=None, SmtpServerAddress=None):
         libraries = [
           ImapKeywords(),
           Pop3Keywords(),
           SmtpKeywords(),
-          SetterKeywords(Username, Password, MailServerAddress, ImapPorts, Pop3Ports, SmtpPorts),
+          SetterKeywords(Username, Password, MailServerAddress, ImapPorts, Pop3Ports, SmtpPorts, ImapServerAddress, Pop3ServerAddress, SmtpServerAddress),
         ]
         DynamicCore.__init__(self, libraries)

@@ -2,9 +2,12 @@ from robot.api.deco import keyword
 from ..mailclient.variables import Variables
 
 class SetterKeywords:
-    def __init__(self,MailUsername:str, MailPassword:str, MailServerAddress:str, ImapPorts:list, Pop3Ports:list, SmtpPorts:list):
+    def __init__(self,MailUsername:str, MailPassword:str, MailServerAddress:str, ImapPorts:list, Pop3Ports:list, SmtpPorts:list,
+                 ImapServerAddress:str=None, Pop3ServerAddress:str=None, SmtpServerAddress:str=None):
         self.set_mail_username_and_password(MailUsername, MailPassword)
-        self.set_mail_server_address(MailServerAddress)
+        self.set_imap_server_address(ImapServerAddress if ImapServerAddress else MailServerAddress)
+        self.set_pop3_server_address(Pop3ServerAddress if Pop3ServerAddress else MailServerAddress)
+        self.set_smtp_server_address(SmtpServerAddress if SmtpServerAddress else MailServerAddress)
         # set all initial ports
         self.set_both_imap_ports(int(ImapPorts[0]),int(ImapPorts[1]))
         self.set_both_pop3_ports(int(Pop3Ports[0]),int(Pop3Ports[1]))
