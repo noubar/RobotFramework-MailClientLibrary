@@ -19,7 +19,7 @@ build () {
 
 install () {
   build
-  pip3 install .
+  python3 -m pip install --no-build-isolation .
 }
 
 test_robot () {
